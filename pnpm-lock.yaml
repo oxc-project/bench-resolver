@@ -1,0 +1,91 @@
+lockfileVersion: '6.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+dependencies:
+  enhanced-resolve:
+    specifier: ^5.15.0
+    version: 5.15.0
+  oxc-resolver:
+    specifier: ^0.0.1
+    version: 0.0.1
+
+packages:
+
+  /@oxc-resolver/binding-darwin-arm64@0.0.1:
+    resolution: {integrity: sha512-jBQODZfgS4mMZXpAyfpnvcUVo90Rhldl3LUksIr4tUdgZuvCirKuhVgPo8+/kwDb/80Aqr6Fe50wJ8DX5R0/aw==}
+    cpu: [arm64]
+    os: [darwin]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@oxc-resolver/binding-darwin-x64@0.0.1:
+    resolution: {integrity: sha512-y7WKqpxtDmj5lUX4FOa+siCOv7n0Zh8Rq4xL/4MiGRjKKtA5ZJqeUEZHYW3zAWT4tZh6cqy+aU2Ydn6fSy+kgQ==}
+    cpu: [x64]
+    os: [darwin]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@oxc-resolver/binding-linux-arm64-gnu@0.0.1:
+    resolution: {integrity: sha512-vjClzW059p0uh64LWCLhphnJR08i0+DNVq3NtHnHAQwd4nipeGTbtIbbJ00HM4p9G1QmxiC0n1qyta4OUrZFKA==}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@oxc-resolver/binding-linux-x64-gnu@0.0.1:
+    resolution: {integrity: sha512-DL6Ozvwt+e41wKefZGrm/8ZPHlI5LG9Ou8ipr422NVNqLylS0lYQCaWW/Sd6bBEGnU9Yi5cwQXkkCsljoUeA+g==}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@oxc-resolver/binding-win32-arm64-msvc@0.0.1:
+    resolution: {integrity: sha512-QgpqXcprsw6wKhdToa5WpQNf7OSAA4AhFqt7RuQKVTOw0bB1+dEaqWLjFTqoI+3wagiLlRl0fEoqdF7uHr8g2Q==}
+    cpu: [arm64]
+    os: [win32]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /@oxc-resolver/binding-win32-x64-msvc@0.0.1:
+    resolution: {integrity: sha512-D0jvIyZvS6mOMtrc+Bwindp4Xg66qhDeII+aFyeI1X5IzmrkU18+cuuOkRQwVNQLirwJEqSQUkaM72KF8FcWzg==}
+    cpu: [x64]
+    os: [win32]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  /enhanced-resolve@5.15.0:
+    resolution: {integrity: sha512-LXYT42KJ7lpIKECr2mAXIaMldcNCh/7E0KBKOu4KSfkHmP+mZmSs+8V5gBAqisWBy0OO4W5Oyys0GO1Y8KtdKg==}
+    engines: {node: '>=10.13.0'}
+    dependencies:
+      graceful-fs: 4.2.11
+      tapable: 2.2.1
+    dev: false
+
+  /graceful-fs@4.2.11:
+    resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
+    dev: false
+
+  /oxc-resolver@0.0.1:
+    resolution: {integrity: sha512-fhmFd+bN5NSHnROpUde7UriEyj8zrdQSTodqZzh1CYKBouW25YAigPzbKUFOhdtI2bYAfBAD0FuqBNFSUZHslg==}
+    optionalDependencies:
+      '@oxc-resolver/binding-darwin-arm64': 0.0.1
+      '@oxc-resolver/binding-darwin-x64': 0.0.1
+      '@oxc-resolver/binding-linux-arm64-gnu': 0.0.1
+      '@oxc-resolver/binding-linux-x64-gnu': 0.0.1
+      '@oxc-resolver/binding-win32-arm64-msvc': 0.0.1
+      '@oxc-resolver/binding-win32-x64-msvc': 0.0.1
+    dev: false
+
+  /tapable@2.2.1:
+    resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
+    engines: {node: '>=6'}
+    dev: false
