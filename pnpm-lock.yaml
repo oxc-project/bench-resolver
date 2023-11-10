@@ -4,13 +4,19 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-dependencies:
+devDependencies:
+  chalk:
+    specifier: ^5.3.0
+    version: 5.3.0
   enhanced-resolve:
     specifier: ^5.15.0
     version: 5.15.0
   oxc-resolver:
     specifier: ^0.0.1
     version: 0.0.1
+  tinybench:
+    specifier: ^2.5.1
+    version: 2.5.1
 
 packages:
 
@@ -19,7 +25,7 @@ packages:
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
-    dev: false
+    dev: true
     optional: true
 
   /@oxc-resolver/binding-darwin-x64@0.0.1:
@@ -27,7 +33,7 @@ packages:
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
-    dev: false
+    dev: true
     optional: true
 
   /@oxc-resolver/binding-linux-arm64-gnu@0.0.1:
@@ -35,7 +41,7 @@ packages:
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
-    dev: false
+    dev: true
     optional: true
 
   /@oxc-resolver/binding-linux-x64-gnu@0.0.1:
@@ -43,7 +49,7 @@ packages:
     cpu: [x64]
     os: [linux]
     requiresBuild: true
-    dev: false
+    dev: true
     optional: true
 
   /@oxc-resolver/binding-win32-arm64-msvc@0.0.1:
@@ -51,7 +57,7 @@ packages:
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
-    dev: false
+    dev: true
     optional: true
 
   /@oxc-resolver/binding-win32-x64-msvc@0.0.1:
@@ -59,8 +65,13 @@ packages:
     cpu: [x64]
     os: [win32]
     requiresBuild: true
-    dev: false
+    dev: true
     optional: true
+
+  /chalk@5.3.0:
+    resolution: {integrity: sha512-dLitG79d+GV1Nb/VYcCDFivJeK1hiukt9QjRNVOsUtTy1rR1YJsmpGGTZ3qJos+uw7WmWF4wUwBd9jxjocFC2w==}
+    engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
+    dev: true
 
   /enhanced-resolve@5.15.0:
     resolution: {integrity: sha512-LXYT42KJ7lpIKECr2mAXIaMldcNCh/7E0KBKOu4KSfkHmP+mZmSs+8V5gBAqisWBy0OO4W5Oyys0GO1Y8KtdKg==}
@@ -68,11 +79,11 @@ packages:
     dependencies:
       graceful-fs: 4.2.11
       tapable: 2.2.1
-    dev: false
+    dev: true
 
   /graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
-    dev: false
+    dev: true
 
   /oxc-resolver@0.0.1:
     resolution: {integrity: sha512-fhmFd+bN5NSHnROpUde7UriEyj8zrdQSTodqZzh1CYKBouW25YAigPzbKUFOhdtI2bYAfBAD0FuqBNFSUZHslg==}
@@ -83,9 +94,13 @@ packages:
       '@oxc-resolver/binding-linux-x64-gnu': 0.0.1
       '@oxc-resolver/binding-win32-arm64-msvc': 0.0.1
       '@oxc-resolver/binding-win32-x64-msvc': 0.0.1
-    dev: false
+    dev: true
 
   /tapable@2.2.1:
     resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
     engines: {node: '>=6'}
-    dev: false
+    dev: true
+
+  /tinybench@2.5.1:
+    resolution: {integrity: sha512-65NKvSuAVDP/n4CqH+a9w2kTlLReS9vhsAP06MWx+/89nMinJyB2icyl58RIcqCmIggpojIGeuJGhjU1aGMBSg==}
+    dev: true

@@ -1,16 +1,12 @@
 {
   "name": "bench-nodejs-resolver",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node index.mjs"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "enhanced-resolve": "^5.15.0",
-    "oxc-resolver": "^0.0.1"
+    "oxc-resolver": "^0.0.1",
+    "tinybench": "^2.5.1"
   }
 }
