@@ -2,11 +2,11 @@
   "name": "bench-nodejs-resolver",
   "private": true,
   "scripts": {
-    "test": "node index.mjs"
+    "bench": "vitest bench --run"
   },
   "devDependencies": {
-    "enhanced-resolve": "^5.15.0",
-    "oxc-resolver": "^0.0.1",
-    "tinybench": "^2.5.1"
+    "enhanced-resolve": "^5.17.1",
+    "oxc-resolver": "^1.10.2",
+    "vitest": "^2.0.4"
   }
 }
