@@ -11,14 +11,15 @@ pnpm install
 pnpm test
 ```
 
-Result
+## Result
+
+### MacBook Pro M3 Max
 
 ```
-Node v18.17.1
-┌─────────┬────────────────────┬────────────┬─────────┐
-│ (index) │        name        │    mean    │ compare │
-├─────────┼────────────────────┼────────────┼─────────┤
-│    0    │ 'enhanced-resolve' │ '0.3553ms' │ '28.01' │
-│    1    │   'oxc-resolver'   │ '0.0127ms' │ '1.00'  │
-└─────────┴────────────────────┴────────────┴─────────┘
+BENCH  Summary
+
+ oxc-resolver sync - src/index.bench.mjs > bench
+   4.45x faster than oxc-resolver async Promise.all
+   8.28x faster than oxc-resolver async loop
+   26.88x faster than enhanced-resolve
 ```
