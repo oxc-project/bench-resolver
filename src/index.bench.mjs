@@ -53,15 +53,19 @@ describe("bench", () => {
     }
   }, options);
 
-  bench('oxc-resolver async', async function testOxcResolver() {
+  bench('oxc-resolver sync', function testOxcResolver() {
+    for (let path of data) {
+      oxcResolveSync(path);
+    }
+  }, options);
+
+  bench('oxc-resolver async loop', async function testOxcResolver() {
     for (let path of data) {
       await oxcResolveAsync(path);
     }
   }, options);
 
-  bench('oxc-resolver sync', function testOxcResolver() {
-    for (let path of data) {
-      oxcResolveSync(path);
-    }
+  bench('oxc-resolver async Promise.all', async function testOxcResolver() {
+    return Promise.all(data.map(oxcResolveAsync));
   }, options);
 });
