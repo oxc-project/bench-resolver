@@ -22,6 +22,7 @@ const data = [
 // Check results are valid
 for (let path of data) {
   assert(await enhancedResolveAsync(path), await oxcResolveAsync(path));
+  assert(await enhancedResolveAsync(path), oxcResolveSync(path));
 }
 
 async function enhancedResolveAsync(path) {
@@ -36,16 +37,31 @@ async function oxcResolveAsync(path) {
   return oxcResolver.async(cwd, path).then((r) => r.path);
 }
 
+async function oxcResolveSync(path) {
+  return oxcResolver.sync(cwd, path).path
+}
+
+const options = {
+  time: 3000,
+  warmupIterations: 1
+};
+
 describe("bench", () => {
   bench('enhanced-resolve', async function testEnhancedResolve() {
     for (let path of data) {
       await enhancedResolveAsync(path);
     }
-  });
+  }, options);
 
-  bench('oxc-resolver', async function testOxcResolver() {
+  bench('oxc-resolver async', async function testOxcResolver() {
     for (let path of data) {
       await oxcResolveAsync(path);
     }
-  });
+  }, options);
+
+  bench('oxc-resolver sync', function testOxcResolver() {
+    for (let path of data) {
+      oxcResolveSync(path);
+    }
+  }, options);
 });
