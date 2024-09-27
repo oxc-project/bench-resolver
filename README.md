@@ -3,13 +3,9 @@
 * [enhanced-resolve](https://www.npmjs.com/package/enhanced-resolve)
 * [oxc-resolver](https://www.npmjs.com/package/oxc-resolver)
 
+## Summary
 
-## Run
-
-```bash
-pnpm install
-pnpm test
-```
+`oxc-resolver` is 20x faster than webpack's `enhanced-resolve`.
 
 ## Result
 
@@ -23,3 +19,11 @@ BENCH  Summary
    8.28x faster than oxc-resolver async loop
    26.88x faster than enhanced-resolve
 ```
+
+## Run
+
+```bash
+pnpm install
+pnpm test
+```
+
