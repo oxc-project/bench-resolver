@@ -5,25 +5,26 @@
 
 ## Summary
 
-`oxc-resolver` is 20x faster than webpack's `enhanced-resolve`.
+`oxc-resolver` is 14x faster than webpack's `enhanced-resolve`.
 
 ## Result
 
 ### MacBook Pro M3 Max
 
 ```
-BENCH  Summary
+ BENCH  Summary
 
- oxc-resolver sync - src/index.bench.mjs > bench
-   4.45x faster than oxc-resolver async Promise.all
-   8.28x faster than oxc-resolver async loop
-   26.88x faster than enhanced-resolve
+  oxc-resolver sync - src/index.bench.mjs > bench
+    1.08x faster than oxc-resolver sync Promise.all
+    4.47x faster than oxc-resolver async Promise.all
+    8.72x faster than oxc-resolver async
+    14.42x faster than enhanced-resolve Promise.all
+    14.73x faster than enhanced-resolve async
 ```
 
 ## Run
 
 ```bash
 pnpm install
-pnpm test
+pnpm run bench
 ```
-
