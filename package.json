@@ -6,7 +6,7 @@
   },
   "devDependencies": {
     "enhanced-resolve": "^5.17.1",
-    "oxc-resolver": "^2.0.0",
-    "vitest": "^2.1.2"
+    "oxc-resolver": "^2.1.1",
+    "vitest": "^2.1.5"
   }
 }
