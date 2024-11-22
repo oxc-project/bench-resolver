@@ -1,6 +1,7 @@
 {
   "name": "bench-nodejs-resolver",
   "private": true,
+  "packageManager": "pnpm@9.12.0",
   "scripts": {
     "bench": "vitest bench --run"
   },
