@@ -6,8 +6,8 @@
     "bench": "vitest bench --run"
   },
   "devDependencies": {
-    "enhanced-resolve": "^5.17.1",
-    "oxc-resolver": "^5.0.0",
-    "vitest": "^3.0.0"
+    "enhanced-resolve": "^5.18.1",
+    "oxc-resolver": "^5.0.1",
+    "vitest": "^3.0.9"
   }
 }
