@@ -5,7 +5,7 @@
 
 ## Summary
 
-`oxc-resolver` is 23~28x faster than webpack's `enhanced-resolve`.
+`oxc-resolver` is 28x faster than webpack's `enhanced-resolve`.
 
 ## Result
 
