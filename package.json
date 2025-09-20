@@ -1,9 +1,11 @@
 {
   "name": "bench-nodejs-resolver",
   "private": true,
+  "type": "module",
   "packageManager": "pnpm@10.16.1",
   "scripts": {
-    "bench": "vitest bench --run"
+    "bench": "vitest bench --run",
+    "bench:update-readme": "node scripts/update-readme-bench.js"
   },
   "devDependencies": {
     "enhanced-resolve": "^5.18.1",

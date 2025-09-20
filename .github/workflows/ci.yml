@@ -22,3 +22,20 @@ jobs:
       - uses: oxc-project/setup-node@fdbf0dfd334c4e6d56ceeb77d91c76339c2a0885 # v1.0.4
 
       - run: pnpm run bench
+
+      - name: Update README with benchmark results
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: |
+          pnpm run bench:update-readme
+
+          # Check if README was modified
+          if git diff --quiet README.md; then
+            echo "No changes to README.md"
+          else
+            echo "README.md was updated with new benchmark results"
+            git config --local user.email "action@github.com"
+            git config --local user.name "GitHub Action"
+            git add README.md
+            git commit -m "chore: update benchmark results in README"
+            git push
+          fi
