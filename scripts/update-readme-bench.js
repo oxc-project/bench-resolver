@@ -19,8 +19,9 @@ async function runBenchmark() {
 
 function extractBenchmarkResults(output) {
   // Extract the BENCH Summary section including the title line
+  // Note: BENCH and Summary may have varying spaces between them
   const summaryMatch = output.match(
-    /BENCH  Summary\n\n([\s\S]*?)(?=\nBenchmarking is an experimental feature|$)/,
+    /BENCH\s+Summary\n\n([\s\S]*?)(?=\nBenchmarking is an experimental feature|$)/,
   );
   if (!summaryMatch) {
     throw new Error("Could not find BENCH Summary in output");
@@ -62,6 +63,7 @@ async function updateReadme(benchmarkResults) {
   }
 
   // Create the new benchmark content
+  // Preserve the exact spacing from the original output
   const newBenchmarkContent = `\`oxc-resolver\` is ${benchmarkResults.mainMultiplier}x faster than webpack's \`enhanced-resolve\`.
 
 \`\`\`
