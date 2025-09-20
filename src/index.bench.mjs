@@ -1,8 +1,8 @@
 import assert from "assert";
 import fs from "fs";
 import { bench, describe } from "vitest";
-import enhancedResolve from 'enhanced-resolve';
-import { ResolverFactory as OxcResolverFactory } from 'oxc-resolver';
+import enhancedResolve from "enhanced-resolve";
+import { ResolverFactory as OxcResolverFactory } from "oxc-resolver";
 
 const cwd = process.cwd();
 
@@ -13,11 +13,11 @@ const enhancedResolver = enhancedResolve.ResolverFactory.createResolver({
 const oxcResolver = new OxcResolverFactory({});
 
 const data = [
-  './src/index.bench.mjs',
-  'oxc-resolver',
-  'enhanced-resolve',
-  "vitest/node"
-]
+  "./src/index.bench.mjs",
+  "oxc-resolver",
+  "enhanced-resolve",
+  "vitest/node",
+];
 
 // Check results are valid
 for (let request of data) {
@@ -26,11 +26,11 @@ for (let request of data) {
 }
 
 async function enhancedResolveAsync(request) {
-  return new Promise(function(resolve) {
+  return new Promise(function (resolve) {
     enhancedResolver.resolve({}, cwd, request, {}, function (_err, res) {
-      resolve(res)
-    })
-  })
+      resolve(res);
+    });
+  });
 }
 
 async function oxcResolveAsync(request) {
@@ -38,37 +38,37 @@ async function oxcResolveAsync(request) {
 }
 
 async function oxcResolveSync(request) {
-  return Promise.resolve(oxcResolver.sync(cwd, request).path)
+  return Promise.resolve(oxcResolver.sync(cwd, request).path);
 }
 
 describe("bench", () => {
-  bench('enhanced-resolve async', async () => {
+  bench("enhanced-resolve async", async () => {
     for (let path of data) {
       await enhancedResolveAsync(path);
     }
   });
 
-  bench('oxc-resolver async', async () => {
+  bench("oxc-resolver async", async () => {
     for (let path of data) {
       await oxcResolveAsync(path);
     }
   });
 
-  bench('oxc-resolver sync', () => {
+  bench("oxc-resolver sync", () => {
     for (let path of data) {
       oxcResolveSync(path);
     }
   });
 
-  bench('enhanced-resolve Promise.all', async () => {
+  bench("enhanced-resolve Promise.all", async () => {
     return Promise.all(data.map(enhancedResolveAsync));
   });
 
-  bench('oxc-resolver async Promise.all', async () => {
+  bench("oxc-resolver async Promise.all", async () => {
     return Promise.all(data.map(oxcResolveAsync));
   });
 
-  bench('oxc-resolver sync Promise.all', async () => {
+  bench("oxc-resolver sync Promise.all", async () => {
     return Promise.all(data.map(oxcResolveSync));
   });
 });
