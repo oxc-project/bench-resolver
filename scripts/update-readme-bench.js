@@ -9,7 +9,7 @@ const execAsync = promisify(exec);
 async function runBenchmark() {
   console.log("Running benchmark...");
   try {
-    const { stdout } = await execAsync("pnpm run bench");
+    const { stdout } = await execAsync("pnpm run bench --no-color");
     return stdout;
   } catch (error) {
     console.error("Error running benchmark:", error);
@@ -18,18 +18,15 @@ async function runBenchmark() {
 }
 
 function extractBenchmarkResults(output) {
-  // Extract the BENCH Summary section including the title line
-  // Note: BENCH and Summary may have varying spaces between them
-  const summaryMatch = output.match(
-    /BENCH\s+Summary\n\n([\s\S]*?)(?=\nBenchmarking is an experimental feature|$)/,
-  );
+  // Extract the BENCH Summary section
+  const summaryMatch = output.match(/BENCH\s+Summary\n\n([\s\S]*?)$/);
   if (!summaryMatch) {
     throw new Error("Could not find BENCH Summary in output");
   }
 
   const summarySection = summaryMatch[1].trim();
 
-  // Extract the main performance multiplier (e.g., "16.04x faster than enhanced-resolve async")
+  // Extract the main performance multiplier (e.g., "23.38x faster than enhanced-resolve async")
   const mainPerformanceMatch = summarySection.match(
     /(\d+\.?\d*)x faster than enhanced-resolve async/,
   );
