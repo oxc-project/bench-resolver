@@ -8,8 +8,8 @@
     "bench:update-readme": "node scripts/update-readme-bench.js"
   },
   "devDependencies": {
-    "enhanced-resolve": "^5.18.1",
-    "oxc-resolver": "^11.0.0",
-    "vitest": "^3.0.9"
+    "enhanced-resolve": "^5.18.3",
+    "oxc-resolver": "^11.8.2",
+    "vitest": "^3.2.4"
   }
 }
