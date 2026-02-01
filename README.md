@@ -6,17 +6,17 @@
 ## Benchmark Results
 
 <!-- BENCHMARK_RESULTS_START -->
-`oxc-resolver` is 26x faster than webpack's `enhanced-resolve`.
+`oxc-resolver` is 28x faster than webpack's `enhanced-resolve`.
 
 ```
  BENCH  Summary
 
 oxc-resolver sync - src/index.bench.mjs > bench
-    1.05x faster than oxc-resolver sync Promise.all
-    5.42x faster than oxc-resolver async Promise.all
-    15.28x faster than oxc-resolver async
-    22.63x faster than enhanced-resolve Promise.all
-    25.79x faster than enhanced-resolve async
+    1.09x faster than oxc-resolver sync Promise.all
+    6.10x faster than oxc-resolver async Promise.all
+    15.89x faster than oxc-resolver async
+    23.95x faster than enhanced-resolve Promise.all
+    28.47x faster than enhanced-resolve async
 ```
 <!-- BENCHMARK_RESULTS_END -->
 
