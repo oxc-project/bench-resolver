@@ -2,7 +2,7 @@
   "name": "bench-nodejs-resolver",
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@10.29.3",
+  "packageManager": "pnpm@10.30.0",
   "scripts": {
     "bench": "vitest bench --run",
     "bench:update-readme": "node scripts/update-readme-bench.js"
