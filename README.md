@@ -1,7 +1,7 @@
 # Bench Resolver
 
-- [enhanced-resolve](https://www.npmjs.com/package/enhanced-resolve)
-- [oxc-resolver](https://www.npmjs.com/package/oxc-resolver)
+- [enhanced-resolve](https://npmx.dev/package/enhanced-resolve)
+- [oxc-resolver](https://npmx.dev/package/oxc-resolver)
 
 ## Benchmark Results
 
