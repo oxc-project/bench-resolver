@@ -2,14 +2,22 @@
   "name": "bench-nodejs-resolver",
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@10.30.2",
   "scripts": {
-    "bench": "vitest bench --run",
-    "bench:update-readme": "node scripts/update-readme-bench.js"
+    "bench": "vp test bench --run",
+    "bench:update-readme": "node scripts/update-readme-bench.js",
+    "prepare": "vp config"
   },
   "devDependencies": {
     "enhanced-resolve": "^5.18.3",
     "oxc-resolver": "^11.8.2",
-    "vitest": "^4.0.0"
+    "vite-plus": "latest",
+    "vitest": "npm:@voidzero-dev/vite-plus-test@latest"
+  },
+  "packageManager": "pnpm@10.30.2",
+  "pnpm": {
+    "overrides": {
+      "vite": "npm:@voidzero-dev/vite-plus-core@latest",
+      "vitest": "npm:@voidzero-dev/vite-plus-test@latest"
+    }
   }
 }

@@ -70,14 +70,10 @@ ${benchmarkResults.summarySection}
 \`\`\``;
 
   // Replace the content between markers
-  const beforeMarker = readmeContent.substring(
-    0,
-    startIndex + startMarker.length,
-  );
+  const beforeMarker = readmeContent.substring(0, startIndex + startMarker.length);
   const afterMarker = readmeContent.substring(endIndex);
 
-  readmeContent =
-    beforeMarker + "\n" + newBenchmarkContent + "\n" + afterMarker;
+  readmeContent = beforeMarker + "\n" + newBenchmarkContent + "\n" + afterMarker;
 
   await writeFile(readmePath, readmeContent);
   console.log("README updated successfully");
@@ -89,9 +85,7 @@ async function main() {
     const results = extractBenchmarkResults(benchmarkOutput);
     await updateReadme(results);
 
-    console.log(
-      `Performance: ${results.mainMultiplier}x faster than enhanced-resolve`,
-    );
+    console.log(`Performance: ${results.mainMultiplier}x faster than enhanced-resolve`);
     console.log("README has been updated with the latest benchmark results");
   } catch (error) {
     console.error("Error:", error.message);

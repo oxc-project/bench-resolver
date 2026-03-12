@@ -1,6 +1,6 @@
 import assert from "assert";
 import fs from "fs";
-import { bench, describe } from "vitest";
+import { bench, describe } from "vite-plus/test";
 import enhancedResolve from "enhanced-resolve";
 import { ResolverFactory as OxcResolverFactory } from "oxc-resolver";
 
@@ -12,12 +12,7 @@ const enhancedResolver = enhancedResolve.ResolverFactory.createResolver({
 
 const oxcResolver = new OxcResolverFactory({});
 
-const data = [
-  "./src/index.bench.mjs",
-  "oxc-resolver",
-  "enhanced-resolve",
-  "vitest/node",
-];
+const data = ["./src/index.bench.mjs", "oxc-resolver", "enhanced-resolve", "vitest/node"];
 
 // Check results are valid
 for (let request of data) {
