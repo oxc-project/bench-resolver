@@ -12,11 +12,11 @@
  BENCH  Summary
 
 oxc-resolver sync - src/index.bench.mjs > bench
-    1.09x faster than oxc-resolver sync Promise.all
-    6.89x faster than oxc-resolver async Promise.all
-    14.51x faster than enhanced-resolve Promise.all
-    18.21x faster than enhanced-resolve async
-    22.39x faster than oxc-resolver async
+    1.11x faster than oxc-resolver sync Promise.all
+    6.83x faster than oxc-resolver async Promise.all
+    14.73x faster than enhanced-resolve Promise.all
+    18.30x faster than oxc-resolver async
+    18.30x faster than enhanced-resolve async
 ```
 <!-- BENCHMARK_RESULTS_END -->
 
