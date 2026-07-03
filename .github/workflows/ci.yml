@@ -50,7 +50,10 @@ jobs:
           delete-branch: true
           base: main
           title: "chore: update benchmark results in README"
-          commit-message: "chore: update benchmark results in README"
+          commit-message: |
+            chore: update benchmark results in README
+
+            [skip ci]
           body: Automated benchmark results update triggered by a change to `main`.
           add-paths: README.md
 
