@@ -32,8 +32,12 @@ async function oxcResolveAsync(request) {
   return oxcResolver.async(cwd, request).then((r) => r.path);
 }
 
-async function oxcResolveSync(request) {
-  return Promise.resolve(oxcResolver.sync(cwd, request).path);
+function oxcResolveSync(request) {
+  return oxcResolver.sync(cwd, request).path;
+}
+
+function oxcResolveSyncPromise(request) {
+  return Promise.resolve(oxcResolveSync(request));
 }
 
 describe("bench", () => {
@@ -64,6 +68,6 @@ describe("bench", () => {
   });
 
   bench("oxc-resolver sync Promise.all", async () => {
-    return Promise.all(data.map(oxcResolveSync));
+    return Promise.all(data.map(oxcResolveSyncPromise));
   });
 });
