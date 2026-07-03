@@ -73,7 +73,7 @@ ${benchmarkResults.summarySection}
   const beforeMarker = readmeContent.substring(0, startIndex + startMarker.length);
   const afterMarker = readmeContent.substring(endIndex);
 
-  readmeContent = beforeMarker + "\n" + newBenchmarkContent + "\n" + afterMarker;
+  readmeContent = beforeMarker + "\n\n" + newBenchmarkContent + "\n\n" + afterMarker;
 
   await writeFile(readmePath, readmeContent);
   console.log("README updated successfully");
@@ -93,4 +93,4 @@ async function main() {
   }
 }
 
-main();
+void main();

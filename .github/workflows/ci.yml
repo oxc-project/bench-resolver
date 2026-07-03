@@ -19,7 +19,8 @@ jobs:
     name: Benchmark
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: write # Push the auto/update-readme branch.
+      pull-requests: write # Create and auto-merge the README PR.
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
@@ -31,17 +32,30 @@ jobs:
 
       - name: Update README with benchmark results
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: |
-          pnpm run bench:update-readme
+        run: pnpm run bench:update-readme
 
-          # Check if README was modified
-          if git diff --quiet README.md; then
-            echo "No changes to README.md"
-          else
-            echo "README.md was updated with new benchmark results"
-            git config --local user.email "action@github.com"
-            git config --local user.name "GitHub Action"
-            git add README.md
-            git commit -m "chore: update benchmark results in README"
-            git push
-          fi
+      - uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        id: app-token
+        with:
+          client-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+
+      - uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        id: cpr
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          branch: auto/update-readme
+          delete-branch: true
+          base: main
+          title: "chore: update benchmark results in README"
+          commit-message: "chore: update benchmark results in README"
+          body: Automated benchmark results update triggered by a change to `main`.
+          add-paths: README.md
+
+      - if: steps.cpr.outputs.pull-request-number
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          PR_NUMBER: ${{ steps.cpr.outputs.pull-request-number }}
+        run: gh pr merge --squash --auto --delete-branch "$PR_NUMBER"
