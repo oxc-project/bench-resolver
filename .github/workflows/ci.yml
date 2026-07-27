@@ -7,6 +7,8 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - README.md
 
 permissions: {}
 
@@ -50,10 +52,7 @@ jobs:
           delete-branch: true
           base: main
           title: "chore: update benchmark results in README"
-          commit-message: |
-            chore: update benchmark results in README
-
-            [skip ci]
+          commit-message: "chore: update benchmark results in README"
           body: Automated benchmark results update triggered by a change to `main`.
           add-paths: README.md
 
