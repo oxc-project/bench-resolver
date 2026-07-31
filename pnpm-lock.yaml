@@ -1679,29 +1679,12 @@ snapshots:
 
   '@types/estree@1.0.9': {}
 
-  '@vitest/browser-preview@4.1.10(@voidzero-dev/vite-plus-test@0.1.24(vite@8.0.1(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2)))(vite@8.0.1(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2))':
+  '@vitest/browser-preview@4.1.10(vite@8.0.1(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2))(vitest@4.1.10)':
     dependencies:
       '@testing-library/dom': 10.4.1
       '@testing-library/user-event': 14.6.1(@testing-library/dom@10.4.1)
-      '@vitest/browser': 4.1.10(@voidzero-dev/vite-plus-test@0.1.24(vite@8.0.1(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2)))(vite@8.0.1(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2))
-      vitest: '@voidzero-dev/vite-plus-test@0.1.24(vite@8.0.1(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2))'
-    transitivePeerDependencies:
-      - bufferutil
-      - msw
-      - utf-8-validate
-      - vite
-
-  '@vitest/browser@4.1.10(@voidzero-dev/vite-plus-test@0.1.24(vite@8.0.1(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2)))(vite@8.0.1(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2))':
-    dependencies:
-      '@blazediff/core': 1.9.1
-      '@vitest/mocker': 4.1.10(vite@8.0.1(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2))
-      '@vitest/utils': 4.1.10
-      magic-string: 0.30.21
-      pngjs: 7.0.0
-      sirv: 3.0.2
-      tinyrainbow: 3.1.0
-      vitest: '@voidzero-dev/vite-plus-test@0.1.24(vite@8.0.1(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2))'
-      ws: 8.21.0
+      '@vitest/browser': 4.1.10(vite@8.0.1(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2))(vitest@4.1.10)
+      vitest: 4.1.10(@vitest/browser-preview@4.1.10)(vite@8.0.1(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2))
     transitivePeerDependencies:
       - bufferutil
       - msw
@@ -2192,7 +2175,7 @@ snapshots:
       '@oxc-project/types': 0.141.0
       '@oxlint/plugins': 1.73.0
       '@vitest/browser': 4.1.10(vite@8.0.1(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2))(vitest@4.1.10)
-      '@vitest/browser-preview': 4.1.10(@voidzero-dev/vite-plus-test@0.1.24(vite@8.0.1(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2)))(vite@8.0.1(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2))
+      '@vitest/browser-preview': 4.1.10(vite@8.0.1(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2))(vitest@4.1.10)
       '@vitest/expect': 4.1.10
       '@vitest/mocker': 4.1.10(vite@8.0.1(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2))
       '@vitest/pretty-format': 4.1.10
@@ -2281,7 +2264,7 @@ snapshots:
       vite: 8.0.1(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2)
       why-is-node-running: 2.3.0
     optionalDependencies:
-      '@vitest/browser-preview': 4.1.10(@voidzero-dev/vite-plus-test@0.1.24(vite@8.0.1(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2)))(vite@8.0.1(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2))
+      '@vitest/browser-preview': 4.1.10(vite@8.0.1(@emnapi/core@1.11.2)(@emnapi/runtime@1.11.2))(vitest@4.1.10)
     transitivePeerDependencies:
       - msw
 
